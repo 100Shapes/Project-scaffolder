@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "materialize-css": "^0.97.8",
     "react-scripts": "0.7.0"
   },
   "dependencies": {
