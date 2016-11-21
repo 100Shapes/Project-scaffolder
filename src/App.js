@@ -20,6 +20,7 @@ class App extends Component {
               className="material-icons">menu</i></a>
           </div>
         </nav>
+
         <div className="section no-pad-bot" id="index-banner">
           <div className="container">
             <br />
