@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "100shapes-project-scaffolder",
+  "version": "0.1.0",
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "oauth2": {
+    "client_id": "211138648945-k870hri4q5r3bhr7u7tsnk193um1oa0k.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/plus.login",
+      "https://www.googleapis.com/auth/drive"
+    ]
+  },
+  "permissions": [
+    "identity",
+    "https://accounts.google.com/*",
+    "https://www.googleapis.com/*"
+  ],
+  "app": {
+    "background": {
+      "scripts": [
+        "background.js"
+      ]
+    }
+  },
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "minimum_chrome_version": "29"
+}
