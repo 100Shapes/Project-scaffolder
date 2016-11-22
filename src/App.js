@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "materialize-css/dist/js/materialize";
 import "materialize-css/dist/css/materialize.css";
 import "./App.css";
+import {generateProjectDirString} from "./lib/gDrive";
 
 class App extends Component {
 
@@ -28,6 +29,11 @@ class App extends Component {
       project_name
     } = this.state;
 
+    const project_dir = generateProjectDirString({
+      client: client_name,
+      project: project_name
+    });
+
     return (
       <div>
         <nav className="light-blue lighten-1" role="navigation">
@@ -52,6 +58,7 @@ class App extends Component {
                            id="client_name"
                            type="text"
                            className="validate"
+                           required="required"
                            onChange={(event) => {
                              const {value} = event.target;
                              this.handleClientChange(value);
@@ -63,6 +70,7 @@ class App extends Component {
                     <input placeholder={`e.g. "Transparency"`}
                            id="project_name"
                            type="text"
+                           required="required"
                            className="validate"
                            onChange={(event) => {
                              const {value} = event.target;
@@ -75,10 +83,25 @@ class App extends Component {
               </form>
             </div>
           </div>
+
           <div className="section">
-            <h5>
-              Project : { this.state.client_name } : { this.state.project_name }
-            </h5>
+            <div className="row">
+              <h5>
+                { project_dir }
+              </h5>
+              <h6>
+                > Design : { client_name } : { project_name }
+              </h6>
+              <h6>
+                > Proposal: { client_name } : { project_name }
+              </h6>
+            </div>
+          </div>
+
+          <div className="section">
+            <div className="row">
+              <a className="waves-effect waves-light btn">Make Folders</a>
+            </div>
           </div>
         </div>
       </div>
