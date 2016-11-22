@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import "materialize-css/dist/js/materialize";
 import "materialize-css/dist/css/materialize.css";
 import "./App.css";
-import {scaffold, generateProjectDirString} from "./lib/gDrive";
+import scaffold from "./Drive";
+import generateName from "./Drive/directoryNames";
 
 class App extends Component {
 
@@ -33,7 +34,14 @@ class App extends Component {
       project_name
     } = this.state;
 
-    const project_dir = generateProjectDirString({
+    const project_dir = generateName({
+      prefix: 'Project',
+      client: client_name,
+      project: project_name
+    });
+
+    const design_dir = generateName({
+      prefix: 'Design',
       client: client_name,
       project: project_name
     });
@@ -94,10 +102,7 @@ class App extends Component {
                 { project_dir }
               </h5>
               <h6>
-                > Design : { client_name } : { project_name }
-              </h6>
-              <h6>
-                > Proposal: { client_name } : { project_name }
+                > { design_dir }
               </h6>
             </div>
           </div>
