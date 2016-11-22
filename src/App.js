@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "materialize-css/dist/js/materialize";
 import "materialize-css/dist/css/materialize.css";
 import "./App.css";
-import {generateProjectDirString} from "./lib/gDrive";
+import {scaffold, generateProjectDirString} from "./lib/gDrive";
 
 class App extends Component {
 
@@ -12,6 +12,10 @@ class App extends Component {
       client_name: '',
       project_name: ''
     };
+  }
+
+  scaffoldProject(params) {
+    scaffold(params);
   }
 
   handleClientChange(client_name) {
@@ -100,7 +104,12 @@ class App extends Component {
 
           <div className="section">
             <div className="row">
-              <a className="waves-effect waves-light btn">Make Folders</a>
+              <a className="waves-effect waves-light btn" onClick={() => {
+                this.scaffoldProject({
+                  client: client_name,
+                  project: project_name
+                });
+              }}>Make Folders</a>
             </div>
           </div>
         </div>

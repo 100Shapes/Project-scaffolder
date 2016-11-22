@@ -6,7 +6,7 @@
     "128": "icon_128.png"
   },
   "oauth2": {
-    "client_id": "211138648945-k870hri4q5r3bhr7u7tsnk193um1oa0k.apps.googleusercontent.com",
+    "client_id": "211138648945-u5p90pdg2jtoubchgv7h7rpirqoss9jo.apps.googleusercontent.com",
     "scopes": [
       "https://www.googleapis.com/auth/plus.login",
       "https://www.googleapis.com/auth/drive"
