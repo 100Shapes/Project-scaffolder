@@ -56,10 +56,11 @@ export const createDesignDirectory = ({
 };
 
 export const scaffold = params => {
-
-  createProjectDirectory(params)
-    .then(createDesignDirectory);
-
+  return new Promise(resolve => {
+    createProjectDirectory(params)
+      .then(createDesignDirectory)
+      .then(resolve);
+  });
 };
 
 export default scaffold;

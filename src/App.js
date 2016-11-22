@@ -16,7 +16,12 @@ class App extends Component {
   }
 
   scaffoldProject(params) {
-    scaffold(params);
+    scaffold(params).then(() => {
+      this.setState({
+        client_name: '',
+        project_name: ''
+      });
+    });
   }
 
   handleClientChange(client_name) {
